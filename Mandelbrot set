@@ -1,0 +1,24 @@
+# Mandelbrot Set
+
+import matplotlib.pyplot as plt
+
+initial = float(input("Enter initial value:- "))
+rate = float(input("Enter initial rate:- "))
+change = float(input("Enter the value to be incremented in rate:- "))
+num = int(input("Enter number of iterations:- "))
+
+x_axis = []
+y_axis = []
+req_val = int(0.1* num)
+value = initial
+
+for i in range(num- 1):
+    for j in range(num- 1):
+        final = rate* initial* (1- initial)
+        initial = final
+
+        if j >= req_val:
+            y_axis.append(initial)
+            x_axis.append(rate)
+    rate += change
+    initial = value
